@@ -49,7 +49,7 @@ header {
     padding-top: 5%;
     position: absolute;
     clip-path: circle(0% at 88% 50%);
-    z-index: 0;
+    opacity: 0;
 
     .saborBatata {
       width: 30%;
@@ -94,25 +94,51 @@ header {
     }
   }
 
-  .saltEVinagar {
-    background: linear-gradient(100deg, #2ac4ff 2.57%, #0d88bb 95.91%);
-  }
-
-  .hamECheese {
-    background: linear-gradient(100deg, #ff849d 2.57%, #c5566a 95.91%);
-  }
-
-  .paprika {
-    background: linear-gradient(100deg, #ff8917 2.57%, #d06000 95.91%);
-  }
-
-  .cheeseEOnion {
-    background: linear-gradient(100deg, #008e5e 2.57%, #005235 95.91%);
-  }
-
   .active {
     clip-path: circle(100vw at 88% 50%);
-    transition: clip-path 0.8s;
-    z-index: 10;
+    transition:
+      opacity 0.3s,
+      clip-path 0.8s;
+    opacity: 1;
   }
+}
+
+.original {
+  background: linear-gradient(100deg, #fe4f6c 2.57%, #9b1b2d 95.91%);
+}
+
+.saltEVinagar {
+  background: linear-gradient(100deg, #2ac4ff 2.57%, #0d88bb 95.91%);
+}
+
+.hamECheese {
+  background: linear-gradient(100deg, #ff849d 2.57%, #c5566a 95.91%);
+}
+
+.paprika {
+  background: linear-gradient(100deg, #ff8917 2.57%, #d06000 95.91%);
+}
+
+.cheeseEOnion {
+  background: linear-gradient(100deg, #008e5e 2.57%, #005235 95.91%);
+}
+
+.hotESpicy {
+  background: linear-gradient(100deg, #4f423c 2.57%, #372a26 95.91%);
+}
+
+.saborJamon {
+  background: linear-gradient(100deg, #903d54 2.57%, #571c2d 95.91%);
+}
+
+.emmental {
+  background: linear-gradient(100deg, #ffffd8 2.57%, #aca386 95.91%);
+}
+
+.sourCream {
+  background: linear-gradient(100deg, #55d471 2.57%, #277c3a 95.91%);
+}
+
+.bbqTexas {
+  background: linear-gradient(100deg, #8b2a60 2.57%, #4b0b2f 95.91%);
 }

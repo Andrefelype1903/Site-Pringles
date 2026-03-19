@@ -10,6 +10,7 @@ body {
   color: rgba(255, 255, 255, 0.9);
   transition: color 0.8s;
   font-family: "Poppins", sans-serif;
+  position: relative;
 }
 
 header {
@@ -38,6 +39,7 @@ header {
 
 .slider {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -52,17 +54,31 @@ header {
     clip-path: circle(0% at 88% 50%);
     opacity: 0;
     overflow: hidden;
+    transition:
+      opacity 0.3s 1s,
+      clip-path 0.8s 1s;
+    z-index: 0;
 
     .saborBatata {
       width: 30%;
       height: auto;
       margin-left: -14%;
-      /* transform: rotateZ(-30deg); */
+      transform: rotateZ(30deg);
+      transition: transform 2s;
     }
 
     .descricao {
       padding: 0 0 5% 5%;
       margin-top: 10%;
+
+      h2,
+      p,
+      button {
+        opacity: 0;
+        transition:
+          opacity 2s,
+          transform 1s 1s;
+      }
 
       h2 {
         font-weight: 800;
@@ -80,6 +96,7 @@ header {
         border-radius: 4px;
         font-family: "Poppins", sans-serif;
         text-transform: uppercase;
+        transform: translateY(40px);
       }
 
       .navigation {
@@ -139,50 +156,88 @@ header {
   }
 
   .active {
-    clip-path: circle(100vw at 88% 50%);
+    clip-path: circle(140vw at 88% 50%);
     transition:
       opacity 0.3s,
-      clip-path 0.8s;
+      clip-path 1.4s;
     opacity: 1;
+    z-index: 1;
+
+    .saborBatata {
+      transform: rotateZ(-360deg);
+      transition: transform 1s ease-out;
+    }
+
+    .descricao {
+      h2,
+      p,
+      button {
+        opacity: 1;
+      }
+
+      h2 {
+        transition: opacity 0.5s;
+      }
+
+      p {
+        transition: opacity 1.5s;
+      }
+
+      button {
+        transform: translateY(0);
+        transition:
+          opacity 2s,
+          transform 1s 0.2s;
+      }
+    }
+  }
+
+  .original {
+    background: linear-gradient(100deg, #fe4f6c 2.57%, #9b1b2d 95.91%);
+  }
+
+  .saltEVinagar {
+    background: linear-gradient(100deg, #2ac4ff 2.57%, #0d88bb 95.91%);
+  }
+
+  .hamECheese {
+    background: linear-gradient(100deg, #ff849d 2.57%, #c5566a 95.91%);
+  }
+
+  .paprika {
+    background: linear-gradient(100deg, #ff8917 2.57%, #d06000 95.91%);
+  }
+
+  .cheeseEOnion {
+    background: linear-gradient(100deg, #008e5e 2.57%, #005235 95.91%);
+  }
+
+  .hotESpicy {
+    background: linear-gradient(100deg, #4f423c 2.57%, #372a26 95.91%);
+  }
+
+  .saborJamon {
+    background: linear-gradient(100deg, #903d54 2.57%, #571c2d 95.91%);
+  }
+
+  .emmental {
+    background: linear-gradient(100deg, #ffffd8 2.57%, #aca386 95.91%);
+  }
+
+  .sourCream {
+    background: linear-gradient(100deg, #55d471 2.57%, #277c3a 95.91%);
+  }
+
+  .bbqTexas {
+    background: linear-gradient(100deg, #8b2a60 2.57%, #4b0b2f 95.91%);
   }
 }
 
-.original {
-  background: linear-gradient(100deg, #fe4f6c 2.57%, #9b1b2d 95.91%);
-}
+.faixa {
+  display: flex;
+  background-color: yellow;
+  width: 100%;
 
-.saltEVinagar {
-  background: linear-gradient(100deg, #2ac4ff 2.57%, #0d88bb 95.91%);
-}
-
-.hamECheese {
-  background: linear-gradient(100deg, #ff849d 2.57%, #c5566a 95.91%);
-}
-
-.paprika {
-  background: linear-gradient(100deg, #ff8917 2.57%, #d06000 95.91%);
-}
-
-.cheeseEOnion {
-  background: linear-gradient(100deg, #008e5e 2.57%, #005235 95.91%);
-}
-
-.hotESpicy {
-  background: linear-gradient(100deg, #4f423c 2.57%, #372a26 95.91%);
-}
-
-.saborJamon {
-  background: linear-gradient(100deg, #903d54 2.57%, #571c2d 95.91%);
-}
-
-.emmental {
-  background: linear-gradient(100deg, #ffffd8 2.57%, #aca386 95.91%);
-}
-
-.sourCream {
-  background: linear-gradient(100deg, #55d471 2.57%, #277c3a 95.91%);
-}
-
-.bbqTexas {
-  background: linear-gradient(100deg, #8b2a60 2.57%, #4b0b2f 95.91%);
+  position: absolute;
+  margin-bottom: 50%;
 }
